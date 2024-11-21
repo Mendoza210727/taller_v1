@@ -5,9 +5,9 @@ from .detalle_cliente_view import detalle_cliente_create, detalle_cliente_get, d
 
 urlpatterns = [
     # rutas de Clientes
-    path('clientes', cliente_all, name = 'clientes'),
+    path('clientes/', cliente_all, name = 'clientes'),
     path('clientes/<int:pk>', cliente_get, name = 'cliente'),
-    path('clientes/create', cliente_create, name = 'cliente-creaate'),
+    path('clientes/create', cliente_create, name = 'cliente-create'),
     path('clientes/update/<int:pk>', cliente_update, name = 'clientes-update'),
     path('clientes/delete/<int:pk>', cliente_delete, name = 'clientes-delete'),
     # rutas de Prenda

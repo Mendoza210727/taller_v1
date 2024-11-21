@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\Lenovo\Desktop\Practicas\taller_v3\env
+set VIRTUAL_ENV=D:\taller_de_grado\taller\back\taller_v1\env
 
 if not defined PROMPT set PROMPT=$P$G
 

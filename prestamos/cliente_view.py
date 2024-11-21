@@ -2,6 +2,8 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from .models import Cliente
+from .serializers import ClienteSerializer
 
 from .models import Cliente,Detalle_cliente
 from .serializers import ClienteSerializer, Detalle_clienteSerializer
@@ -16,9 +18,10 @@ def cliente_create(request):
 
 @api_view(['GET'])
 def cliente_all(request):
-    clientes = Cliente.objects.all()
-    serializer = ClienteSerializer(clientes, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    if request.method == 'GET':
+        clientes = Cliente.objects.all()
+        serializer = ClienteSerializer(clientes, many=True)
+        return Response(serializer.data)
 
 @api_view(['GET'])
 def cliente_get(request, pk):
